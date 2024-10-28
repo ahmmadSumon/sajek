@@ -6,7 +6,7 @@ import AboutUs from "./aboutus/page";
 import { HeroScrollDemo } from "./components/HeroScrollDemo";
 import ScrollBackgroundSection from "./components/ScrollBackgroundSection";
 import { CardHoverEffectDemo } from "./components/CardHoverEffectDemo";
-import Packages from "./components/packages";
+import Packages from "./components/Packages";
 import Footer from "./components/Footer";
 import Tours from "./components/Tours";
 
