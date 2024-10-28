@@ -1,7 +1,10 @@
+// app/layout.js (or RootLayout.js, depending on your file structure)
 import localFont from "next/font/local";
 import "./globals.css";
-import Nav from "../app/components/Nav"; // Adjust the path if necessary
-import Footer from "../app/components/Footer"; // Adjust the path if necessary
+import Nav from "../app/components/Nav";
+import Footer from "../app/components/Footer";
+import Loader from "../app/components/Loader"; // Adjust path if necessary
+import { AnimatePresence } from "framer-motion";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,15 +25,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <AnimatePresence>
+          {/* Loader will appear on initial load */}
+          <Loader />
+        </AnimatePresence>
+
         {/* Render the Nav component at the top */}
         <Nav />
-        
+
         {/* Main content area */}
         <main>{children}</main>
-        
+
         {/* Render the Footer component at the bottom */}
         <Footer />
       </body>

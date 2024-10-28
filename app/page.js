@@ -18,8 +18,9 @@ export default function Home() {
      <HeroSection/>
     
     <AboutUs/>
-    <Packages/>
+   
     <HeroScrollDemo/>
+    <Packages/>
     <ScrollBackgroundSection/>
     <Tours/>
    
