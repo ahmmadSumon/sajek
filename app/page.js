@@ -18,10 +18,11 @@ export default function Home() {
      <HeroSection/>
     
     <AboutUs/>
+    <Packages/>
     <HeroScrollDemo/>
     <ScrollBackgroundSection/>
-    <Packages/>
     <Tours/>
+   
     {/* <Footer/> */}
     </div>
   );
