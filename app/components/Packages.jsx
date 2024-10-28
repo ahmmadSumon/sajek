@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardHoverEffectDemo } from './CardHoverEffectDemo'
+import { CardHoverEffectDemo } from '../components/CardHoverEffectDemo'
 
 const Packages = () => {
   return (
