@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import Link from 'next/link'; // Added import for Link
 
 const HeroSection = () => {
   const videoRef = useRef(null);
@@ -30,10 +31,10 @@ const HeroSection = () => {
 
       {/* Social Media Links - Right Side Vertical */}
       <div className="absolute top-1/2 right-4 transform -translate-y-1/2 space-y-4 z-50 text-white text-2xl">
-        <a href="#" className="block p-2 hover:text-yellow-400"><FaFacebook /></a>
-        <a href="#" className="block p-2 hover:text-yellow-400"><FaTwitter /></a>
-        <a href="#" className="block p-2 hover:text-yellow-400"><FaInstagram /></a>
-        <a href="#" className="block p-2 hover:text-yellow-400"><FaYoutube /></a>
+        <Link href="#" className="block p-2 hover:text-yellow-400"><FaFacebook /></Link>
+        <Link href="#" className="block p-2 hover:text-yellow-400"><FaTwitter /></Link>
+        <Link href="#" className="block p-2 hover:text-yellow-400"><FaInstagram /></Link>
+        <Link href="#" className="block p-2 hover:text-yellow-400"><FaYoutube /></Link>
       </div>
 
       {/* Content Overlay */}
@@ -46,14 +47,14 @@ const HeroSection = () => {
           </p>
           <div className="relative inline-flex group">
             <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#FFDD44] via-[#FFC107] to-[#FF9800] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-            <a
-              href="#"
+            <Link
+              href="/"
               title="+88 018 41 86 26 00"
               className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black/80 transition-all duration-200 bg-yellow-400 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400"
               role="button"
             >
               +88 018 41 86 26 00
-            </a>
+            </Link>
           </div>
         </div>
       </div>

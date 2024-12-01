@@ -6,7 +6,7 @@ import React from "react";
 const ScrollBackgroundSection = () => {
   return (
     <div className="relative h-screen w-full overflow-hidden mt-20 flex items-center justify-center">
-      {/* Background image layer with scrolling effect */}
+     
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed flex items-center justify-center"
         style={{

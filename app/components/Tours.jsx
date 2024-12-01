@@ -96,20 +96,32 @@ const tourData = [
     }
   ];
   const Tours = () => {
-    const [currentStartIndex, setCurrentStartIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const itemsToShow = 4;
+    const totalItems = unforgettableMoments.length;
 
     const nextSlide = () => {
-        setCurrentStartIndex((prev) => (prev + itemsToShow) % unforgettableMoments.length);
+        setCurrentIndex((prev) => (prev + itemsToShow) % totalItems);
     };
 
     const prevSlide = () => {
-        setCurrentStartIndex((prev) => (prev - itemsToShow + unforgettableMoments.length) % unforgettableMoments.length);
+        setCurrentIndex((prev) => (prev - itemsToShow + totalItems) % totalItems);
+    };
+
+    // State to handle expanding content
+    const [expandedReviews, setExpandedReviews] = useState({});
+
+    const toggleReadMore = (id) => {
+        setExpandedReviews((prev) => ({
+            ...prev,
+            [id]: !prev[id],
+        }));
     };
 
     return (
-        <div className=" py-20 z-30 w-full px-4 sm:px-6 lg:px-8">
+        <div className="py-20 z-30 w-full px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto overflow-hidden">
+                {/* Carousel Section */}
                 <h2 className="text-4xl font-extrabold text-white text-center mt-24 mb-12 relative">
                     <span className="bg-clip-text text-black">জীবনের সন্ধানে</span>
                     <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
@@ -117,8 +129,8 @@ const tourData = [
                 <p className="pt-2 text-center text-lg py-7 bg-clip-text text-black">সাজেক ভ্রমনের স্থিরচিত্র</p>
 
                 <div className="relative w-full">
-                    <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${(currentStartIndex / itemsToShow) * 100}%)` }}>
-                        {unforgettableMoments.slice(currentStartIndex, currentStartIndex + itemsToShow).map((moment) => (
+                    <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${(currentIndex / itemsToShow) * 100}%)` }}>
+                        {unforgettableMoments.slice(currentIndex, currentIndex + itemsToShow).map((moment) => (
                             <div key={moment.id} className="w-full md:w-1/3 p-2">
                                 <div className="bg-black rounded-xl shadow-2xl overflow-hidden transform transition duration-300 hover:scale-105">
                                     <div className="relative h-96">
@@ -137,6 +149,7 @@ const tourData = [
                         ))}
                     </div>
 
+                    {/* Carousel Controls */}
                     <button onClick={prevSlide} className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-yellow-400 rounded-full p-3 shadow-lg hover:bg-yellow-500 transition duration-300">
                         <FaChevronLeft className="text-gray-800 w-6 h-6" />
                     </button>
@@ -145,6 +158,7 @@ const tourData = [
                     </button>
                 </div>
 
+                {/* Blog-like Section with "Read More" */}
                 <h2 className="text-4xl font-extrabold text-white text-center my-12 relative">
                     <span className="pt-2 bg-clip-text text-black text-lg">অভিযাত্রীদের আনন্দ, অবিস্মরণীয় স্মৃতিগুলো</span>
                     <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
@@ -172,7 +186,12 @@ const tourData = [
                                     <span className="text-yellow-400"><FaStar /></span>
                                     <span className="text-gray-300">{tour.rating}</span>
                                 </div>
-                                <p className="text-gray-300 mt-2">"{tour.review}"</p>
+                                <p className="text-gray-300 mt-2">
+                                    {expandedReviews[tour.id] ? tour.review : `${tour.review.slice(0, 50)}...`}
+                                </p>
+                                <button onClick={() => toggleReadMore(tour.id)} className="text-yellow-400 mt-2">
+                                    {expandedReviews[tour.id] ? "Read Less" : "Read More"}
+                                </button>
                                 <p className="text-gray-400 text-sm mt-1">- {tour.reviewer}</p>
                             </div>
                         </div>

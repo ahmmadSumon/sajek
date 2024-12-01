@@ -9,6 +9,7 @@ import {
   IconPhoneCall,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link"; // Added import for Link
 
 export function FloatingDockDemo() {
   const links = [
@@ -60,7 +61,10 @@ export function FloatingDockDemo() {
       <FloatingDock
         // only for demo, remove for production
         mobileClassName="translate-y-20"
-        items={links} />
+        items={links.map(link => ({
+          ...link,
+          href: <Link href={link.href}>{link.href}</Link>, // Removed the a tag
+        }))} />
     </div>)
   );
 }

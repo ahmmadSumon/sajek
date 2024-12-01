@@ -24,26 +24,26 @@ export default function Footer() {
 
         {/* Social Media Links */}
         <div className="flex justify-center mt-8 space-x-6">
-          <a href="#" className="text-gray-300 hover:text-yellow-400 transition duration-300">
+          <Link href="/" className="text-gray-300 hover:text-yellow-400 transition duration-300">
             <FaFacebook size={24} />
-          </a>
-          <a href="#" className="text-gray-300 hover:text-yellow-400 transition duration-300">
+          </Link>
+          <Link href="/" className="text-gray-300 hover:text-yellow-400 transition duration-300">
             <FaTwitter size={24} />
-          </a>
-          <a href="#" className="text-gray-300 hover:text-yellow-400 transition duration-300">
+          </Link>
+          <Link href="/" className="text-gray-300 hover:text-yellow-400 transition duration-300">
             <FaInstagram size={24} />
-          </a>
-          <a href="#" className="text-gray-300 hover:text-yellow-400 transition duration-300">
+          </Link>
+          <Link href="/" className="text-gray-300 hover:text-yellow-400 transition duration-300">
             <FaYoutube size={24} />
-          </a>
+          </Link>
         </div>
 
         {/* Bottom Text */}
         <div className="mt-10 text-center text-sm text-gray-500 space-y-2">
-          <p>&copy; {new Date().getFullYear()} Sajek Valley. All rights reserved.</p>
+          <p>&copy; 2024 Sajek Valley. All rights reserved.</p>
           <p>
-            <Link href="/privacy-policy" className="hover:text-yellow-400 transition duration-300">Privacy Policy</Link> |
-            <Link href="/terms-of-service" className="hover:text-yellow-400 transition duration-300"> Terms of Service</Link>
+            <Link href="/" className="hover:text-yellow-400 transition duration-300">Privacy Policy</Link> |
+            <Link href="/" className="hover:text-yellow-400 transition duration-300"> Terms of Service</Link>
           </p>
         </div>
       </div>
