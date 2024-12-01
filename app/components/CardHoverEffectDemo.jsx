@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { HoverEffect } from './ui/card-hover-effect';
+import  HoverEffect  from './ui/card-hover-effect';
 
 export const CardHoverEffectDemo= () => {
   const [isClient, setIsClient] = useState(false);

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export const HoverEffect = ({ items, className }) => {
+const HoverEffect = ({ items, className }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   // Hydration safe setup
@@ -74,6 +74,7 @@ export const HoverEffect = ({ items, className }) => {
     </div>
   );
 };
+export default HoverEffect;
 
 export const CardTitle = ({ className, children }) => {
   return (

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
@@ -8,7 +9,7 @@ export default function Footer() {
         {/* Logo and Description */}
         <div className="flex flex-col items-center space-y-4">
           <Link href="/" className="flex items-center space-x-3">
-            <img
+            <Image
               src="/Sajek-valley.png"
               alt="Sajek Valley"
               width={120}
