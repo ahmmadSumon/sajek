@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { HoverEffect } from './ui/card-hover-effect';
 
-export function CardHoverEffectDemo() {
+export const CardHoverEffectDemo= () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
